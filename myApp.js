@@ -11,6 +11,10 @@ app.use((req,res,next)=>{
     next();
 });
 
+let bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.get('/',(req, res) => {
     path = __dirname + '/views/index.html';
     res.sendFile(path);
